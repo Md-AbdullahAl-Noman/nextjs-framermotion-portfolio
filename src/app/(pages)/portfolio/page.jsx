@@ -42,8 +42,7 @@ export default function Portfolio() {
   const ref = useRef();
 
   const { scrollYProgress } = useScroll({ target: ref });
-
-  const transformer = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
 
   return (
     <motion.div
@@ -56,17 +55,18 @@ export default function Portfolio() {
           My Works
         </div>
         <div className="sticky top-0 h-screen flex gap-4 items-center overflow-hidden">
-          <div className="flex">
+          <motion.div className="flex" style={ {x}}>
+            <div className="w-screen h-screen flex items-center justify-center bg-gradient-to-r from-blue-300 to-red-300"/>
             {items.map((item) => (
               <div
                 key={item.id}
                 className={`w-screen h-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
               >
-                <div className="flex flex-col gap-8 ">
+                <div className="flex flex-col gap-8 items-center justify-center  ">
                   <h1 className="text-4xl font-bold text-white">
                     {item.title}
                   </h1>
-                  <p className="text-xl text-gray-200">{item.desc}</p>
+                  <p className="text-xl text-gray-200 p-4">{item.desc}</p>
                   <p className="text-lg text-gray-400 italic">{item.tools}</p>
 
                   <div className="">
@@ -79,7 +79,7 @@ export default function Portfolio() {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </motion.div>
