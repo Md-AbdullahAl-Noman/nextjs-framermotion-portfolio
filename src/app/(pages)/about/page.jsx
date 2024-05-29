@@ -1,5 +1,5 @@
 "use client";
-import { motion, useInView, useScroll } from "framer";
+import { motion, useInView, useScroll } from "framer-motion";
 import MechanicalBrain from "@/components/mechanicalBrain";
 import { useRef } from "react";
 
@@ -8,25 +8,25 @@ export default function About() {
 
   const { scrollYProgress } = useScroll({ container: containerRef });
   
-  const skillRef=useRef();
-  const skillViewMotion=useInView(skillRef,{once:true});
+  const skillRef = useRef();
+  const skillViewMotion = useInView(skillRef, { once: true });
 
-  const expRef=useRef();
-  const expViewMotion=useInView(expRef,{once:true});
+  const expRef = useRef();
+  const expViewMotion = useInView(expRef, { once: true });
 
   return (
     <motion.div
       initial={{ y: "-200vh" }}
       animate={{ y: "0" }}
       transition={{ duration: 1 }}
-      className=" h-full"
+      className="h-full"
     >
       {/* main container */}
       <div className="h-full overflow-auto lg:flex" ref={containerRef}>
         {/* info */}
-        <div className="px-5 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col  gap-24 md:gap-32 lg:gap-48 lg:w-2/3 lg:pr-0 xl:1/2">
+        <div className="px-5 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 lg:w-2/3 lg:pr-0 xl:1/2">
           {/* bio container */}
-          <div className="felx flex-col gap-10 justify-center">
+          <div className="flex flex-col gap-10 justify-center">
             <h1 className="font-bold text-2xl pb-8">BIOGRAPHY</h1>
             <p className="text-xl pb-6">
               Md Abdullah Al Noman is an ambitious final-year Computer Science
@@ -41,7 +41,7 @@ export default function About() {
               meaningfully to projects that innovate and challenge industry
               standards.
             </p>
-            {/*  sign */}
+            {/* sign */}
             <div className="flex justify-end">
               <motion.img src="/signature.png" alt="Digital Signature" />
             </div>
@@ -71,12 +71,26 @@ export default function About() {
           </div>
 
           {/* skills container */}
-          <div className="felx flex-col gap-10 justify-center">
+          <div className="flex flex-col gap-10 justify-center">
             {/* skills title */}
-            <motion.h1 className="font-bold text-2xl mb-8" initial={{x:'-200px'}} animate={skillViewMotion ? {x:0} :{}} transition={{delay:0.2}} ref={skillRef}>SKILLS</motion.h1>
+            <motion.h1
+              className="font-bold text-2xl mb-8"
+              initial={{ x: '-200px' }}
+              animate={skillViewMotion ? { x: 0 } : {}}
+              transition={{ delay: 0.2 }}
+              ref={skillRef}
+            >
+              SKILLS
+            </motion.h1>
 
             {/* Skill List  */}
-            <motion.div className="flex gap-4  flex-wrap mb-8" initial={{x:'-200px'}} animate={skillViewMotion ? {x:0} :{}} transition={{delay:0.3}} ref={skillRef}>
+            <motion.div
+              className="flex gap-4 flex-wrap mb-8"
+              initial={{ x: '-200px' }}
+              animate={skillViewMotion ? { x: 0 } : {}}
+              transition={{ delay: 0.3 }}
+              ref={skillRef}
+            >
               <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                 Python
               </div>
@@ -186,15 +200,29 @@ export default function About() {
           </div>
 
           {/* experience container */}
-          <div className="felx flex-col gap-10 justify-center pb-48">
+          <div className="flex flex-col gap-10 justify-center pb-48 " ref={expRef}>
             {/* exp title */}
-            <motion.h1 className="font-bold text-2xl mb-8" initial={{x:"-300px"}} animate={expViewMotion? {x:0}:{}} transition={{delay:0.2}} ref={expRef}>EXPERIENCE</motion.h1>
+            <motion.h1
+              className="font-bold text-2xl mb-8"
+              initial={{ x: "-300px" }}
+              animate={expViewMotion ? { x: "0" } : {}}
+              transition={{ delay: 0.2 }}
+              
+            >
+              EXPERIENCE
+            </motion.h1>
             {/* exp list */}
-            <div className="" >
+            <div>
               {/* list item1 */}
-              <div className="flex justify-between h-48" >
+              <div className="flex justify-between h-48">
                 {/* left */}
-                <motion.div className="w-1/3" initial={{x:"-300px"}} animate={expViewMotion? {x:0}:{}} transition={{delay:0.4}} ref={expRef}>
+                <motion.div
+                  className="w-1/3"
+                  initial={{ x: "-300px" }}
+                  animate={expViewMotion ? { x: "0" } : {}}
+                  transition={{ delay: 0.3 }}
+                  ref={expRef}
+                >
                   {/* job title */}
                   <div className="bg-white p-2 font-semibold rounded-b-lg rounded-tl-lg w-fit">
                     Junior js developer
@@ -213,17 +241,17 @@ export default function About() {
                   </div>
                 </motion.div>
 
-                {/* center  */}
-                <div className="w-1/6 ">
+                {/* center */}
+                <div className="w-1/6">
                   {/* lines */}
                   <div className="w-1 bg-gray-500 h-full rounded relative">
-                    {/* line circle  */}
+                    {/* line circle */}
                     <div className="absolute w-5 h-5 rounded-full ring-4 ring-purple-600 bg-white -left-2"></div>
                   </div>
                 </div>
 
                 {/* right */}
-                <div className="w-1/3 "></div>
+                <div className="w-1/3"></div>
               </div>
 
               {/* list item2 */}
@@ -231,24 +259,24 @@ export default function About() {
                 {/* left */}
                 <div className="w-1/3"></div>
 
-                {/* center  */}
-                <div className="w-1/6 ">
+                {/* center */}
+                <div className="w-1/6">
                   {/* lines */}
                   <div className="w-1 bg-gray-500 h-full rounded relative">
-                    {/* line circle  */}
+                    {/* line circle */}
                     <div className="absolute w-5 h-5 rounded-full ring-4 ring-purple-600 bg-white -left-2"></div>
                   </div>
                 </div>
 
                 {/* right */}
-                <div className="w-1/3 "></div>
+                <div className="w-1/3"></div>
               </div>
             </div>
           </div>
         </div>
 
         {/* svg */}
-        <div className="hidden lg:block w-1/3 sticky top-0 xl-1/2 z-30  ">
+        <div className="hidden lg:block w-1/3 sticky top-0 xl-1/2 z-30">
           <MechanicalBrain scrollYProgress={scrollYProgress} />
         </div>
       </div>

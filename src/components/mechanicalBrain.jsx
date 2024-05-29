@@ -1,7 +1,10 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client"
 import React from "react";
-import { motion, useTransform } from "framer";
+import { motion } from "framer";
 import Link from "next/link";
+import { useTransform } from "framer";
+
 export default function mechanicalBrain({scrollYProgress}) {
 
     const rotatesForward1 = useTransform(scrollYProgress, [0, 1], [0, 360]);
