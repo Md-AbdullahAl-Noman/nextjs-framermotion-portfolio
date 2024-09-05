@@ -128,6 +128,9 @@ export default function About() {
                 Next.js
               </div>
               <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                TypeScript
+              </div>
+              <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                 Django
               </div>
               <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
@@ -225,7 +228,7 @@ export default function About() {
                 >
                   {/* job title */}
                   <div className="bg-white p-2 font-semibold rounded-b-lg rounded-tl-lg w-fit">
-                    Junior js developer
+                    Full-Stack Developer
                   </div>
                   {/* job desc */}
                   <div className="p-3 text-sm italic">

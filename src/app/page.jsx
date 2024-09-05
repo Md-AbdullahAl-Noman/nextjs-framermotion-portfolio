@@ -10,15 +10,15 @@ const Homepage = () => {
     <motion.div initial={{y:'-200vh'}} animate={{y:"0"}} transition={{duration:1}} className="h-full overflow-auto">
       <div className="h-full flex flex-col lg:flex-row px-5 sm:px-8 md:px-12 lg:px-20 xl:px-48">
         {/* Image container */}
-        <div className="h-64 sm:h-80 md:h-96 lg:h-full w-full lg:w-1/2 relative mb-5 lg:mb-0">
+        <div className="h-1/2 lg:h-full w-full lg:w-1/2 relative lg:top-0 top-12 -right-14 flex items-center justify-center">
           <Image
-            src="/finalpic.png"
-            alt="Profile Picture"
-            fill
-            className="object-contain"
+            src="https://lh3.googleusercontent.com/a/ACg8ocI8nHMf9CBuPPy8nH5T4buafGDGB9Q_ebFgCBP_YWz4YVK_xTaJ=s288-c-no"
+            height={550}
+            width={550}
+            alt="Profile Image"
+            className="object-contain rounded-full "
           />
         </div>
-
         {/* Text */}
         <div className="h-auto lg:h-full w-full lg:w-1/2 flex flex-col gap-8 items-center justify-center">
           {/* Title */}
