@@ -1,24 +1,28 @@
-"use client"
+"use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-
 const Homepage = () => {
-
   return (
-    <motion.div initial={{y:'-200vh'}} animate={{y:"0"}} transition={{duration:1}} className="h-full overflow-auto">
+    <motion.div
+      initial={{ y: "-200vh" }}
+      animate={{ y: "0" }}
+      transition={{ duration: 1 }}
+      className="h-full overflow-auto"
+    >
       <div className="h-full flex flex-col lg:flex-row px-5 sm:px-8 md:px-12 lg:px-20 xl:px-48">
         {/* Image container */}
-        <div className="h-1/2 lg:h-full w-full lg:w-1/2 relative lg:top-0 top-12 -right-14 flex items-center justify-center">
+        <div className="relative w-full top-0  lg:w-1/2 lg:-right-10  flex items-center justify-center xl:-right-16 2xl:-right-36 2xl:top-0">
           <Image
             src="https://lh3.googleusercontent.com/a/ACg8ocI8nHMf9CBuPPy8nH5T4buafGDGB9Q_ebFgCBP_YWz4YVK_xTaJ=s288-c-no"
-            height={550}
-            width={550}
+            height={450}
+            width={450}
             alt="Profile Image"
-            className="object-contain rounded-full "
+            className="rounded-full object-contain w-48 h-48  sm:w-48 sm:h-48 lg:h-auto lg:w-auto  "
           />
         </div>
+
         {/* Text */}
         <div className="h-auto lg:h-full w-full lg:w-1/2 flex flex-col gap-8 items-center justify-center">
           {/* Title */}
